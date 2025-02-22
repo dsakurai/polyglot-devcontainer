@@ -4,7 +4,7 @@
 
 #!fsharp
 
-let execute sequence state =
+let (>>|) state sequence =
     Array.fold (fun accumulated f -> f accumulated) state sequence
 
 #!fsharp
@@ -24,8 +24,12 @@ let U state =
 
 #!fsharp
 
+0 >>| [| F; U |]
+
+#!fsharp
+
 let generateSequence() = [| F; U |]
 
 #!fsharp
 
-execute (generateSequence()) "hello"
+"hello" >>| generateSequence()
