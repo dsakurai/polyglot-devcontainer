@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM mcr.microsoft.com/dotnet/sdk:9.0
 # Install any additional packages you need
 RUN apt-get update
 
