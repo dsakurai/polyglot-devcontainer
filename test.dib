@@ -4,7 +4,10 @@
 
 #!fsharp
 
-let (>>|) state sequence =
+// Use it like
+// cube |>>>| [| F; U; f|]
+
+let (|>>>|) state sequence =
     Array.fold (fun accumulated f -> f accumulated) state sequence
 
 #!fsharp
@@ -24,12 +27,16 @@ let U state =
 
 #!fsharp
 
-0 >>| [| F; U |]
+"hello" |> F |> U
 
 #!fsharp
 
-let generateSequence() = [| F; U |]
+0 |>>>| [| F; U |]
 
 #!fsharp
 
-"hello" >>| generateSequence()
+let rotateCube() = [| F; U |]
+
+#!fsharp
+
+0 |>>>| rotateCube()
