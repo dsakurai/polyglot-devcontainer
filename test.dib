@@ -8,8 +8,6 @@ let execute_state_sequence state sequence =
     let f = (Array.reduce (>>) sequence) // composite
     f state
 
-// let execute_state_
-
 // Use it like
 // cube |>>>| [| F; U; f|]
 let (|>>>|) = execute_state_sequence
