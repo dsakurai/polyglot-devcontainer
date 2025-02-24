@@ -5,7 +5,7 @@
 #!fsharp
 
 let execute_state_sequence state sequence =
-    let f = (Array.reduce (>>) sequence) // composite
+    let f = (Seq.reduce (>>) sequence) // composite
     f state
 
 // Use it like
