@@ -5,7 +5,10 @@
 #!fsharp
 
 let execute_state_sequence state sequence =
-    Array.fold (fun accumulated f -> f accumulated) state sequence
+    let f = (Array.reduce (>>) sequence) // composite
+    f state
+
+// let execute_state_
 
 // Use it like
 // cube |>>>| [| F; U; f|]
