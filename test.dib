@@ -9,7 +9,7 @@ let execute_state_sequence state sequence =
     f state
 
 // Use it like
-// cube |>>>| [| F; U; f|]
+// cube |>>>| [ F; U; f]
 let (|>>>|) = execute_state_sequence
 
 #!fsharp
@@ -25,7 +25,7 @@ let U state =
 
 #!fsharp
 
-0 |>>>| [| F; U; F |]
+0 |>>>| [ F; U; F ]
 
 #!fsharp
 
@@ -37,14 +37,14 @@ let U state =
 
 #!fsharp
 
-execute_state_sequence 0 [| F; U |]
+execute_state_sequence 0 [ F; U ]
 
 #!fsharp
 
-let rotateCube() = [| F; U |]
+let rotateCube() = [ F; U ]
 
 // we can't write
-//     rotateCube = [| F; U |]
+//     rotateCube = [ F; U ]
 // because tye types of functions F and U are not decided yet.
 
 #!fsharp
