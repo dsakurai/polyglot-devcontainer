@@ -12,6 +12,11 @@
         "--userns=keep-id",
         "--volume=${localWorkspaceFolder}:/workspaces/${localWorkspaceFolderBasename}:Z"
     ],
+    "features": {
+        // SSH-agent forwarding
+        "git": "os-provided",
+        "sshd": "latest"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
